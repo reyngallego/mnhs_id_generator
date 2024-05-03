@@ -1,0 +1,88 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\toman\\source\\repos\\id generator maker\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{468E1913-CF3F-4032-8F4F-A2F9EAD091BC}|id generator maker\\id generator maker.csproj|c:\\users\\toman\\source\\repos\\id generator maker\\id generator maker\\loginform.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
+      "RelativeMoniker": "D:0:0:{468E1913-CF3F-4032-8F4F-A2F9EAD091BC}|id generator maker\\id generator maker.csproj|solutionrelative:id generator maker\\loginform.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{468E1913-CF3F-4032-8F4F-A2F9EAD091BC}|id generator maker\\id generator maker.csproj|c:\\users\\toman\\source\\repos\\id generator maker\\id generator maker\\loginform.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{468E1913-CF3F-4032-8F4F-A2F9EAD091BC}|id generator maker\\id generator maker.csproj|solutionrelative:id generator maker\\loginform.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{468E1913-CF3F-4032-8F4F-A2F9EAD091BC}|id generator maker\\id generator maker.csproj|c:\\users\\toman\\source\\repos\\id generator maker\\id generator maker\\controllers\\admincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{468E1913-CF3F-4032-8F4F-A2F9EAD091BC}|id generator maker\\id generator maker.csproj|solutionrelative:id generator maker\\controllers\\admincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{468E1913-CF3F-4032-8F4F-A2F9EAD091BC}|id generator maker\\id generator maker.csproj|c:\\users\\toman\\source\\repos\\id generator maker\\id generator maker\\dashboard.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
+      "RelativeMoniker": "D:0:0:{468E1913-CF3F-4032-8F4F-A2F9EAD091BC}|id generator maker\\id generator maker.csproj|solutionrelative:id generator maker\\dashboard.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 3,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "dashboard.aspx",
+              "DocumentMoniker": "C:\\Users\\toman\\source\\repos\\id generator maker\\id generator maker\\dashboard.aspx",
+              "RelativeDocumentMoniker": "id generator maker\\dashboard.aspx",
+              "ToolTip": "C:\\Users\\toman\\source\\repos\\id generator maker\\id generator maker\\dashboard.aspx",
+              "RelativeToolTip": "id generator maker\\dashboard.aspx",
+              "LogicalView": "7651a703-06e5-11d1-8ebd-00a0c90f26ea",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000195|",
+              "WhenOpened": "2024-05-03T05:17:45.574Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "adminController.cs",
+              "DocumentMoniker": "C:\\Users\\toman\\source\\repos\\id generator maker\\id generator maker\\Controllers\\adminController.cs",
+              "RelativeDocumentMoniker": "id generator maker\\Controllers\\adminController.cs",
+              "ToolTip": "C:\\Users\\toman\\source\\repos\\id generator maker\\id generator maker\\Controllers\\adminController.cs",
+              "RelativeToolTip": "id generator maker\\Controllers\\adminController.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAoAAAAVAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-03T02:55:41.164Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "loginform.aspx.cs",
+              "DocumentMoniker": "C:\\Users\\toman\\source\\repos\\id generator maker\\id generator maker\\loginform.aspx.cs",
+              "RelativeDocumentMoniker": "id generator maker\\loginform.aspx.cs",
+              "ToolTip": "C:\\Users\\toman\\source\\repos\\id generator maker\\id generator maker\\loginform.aspx.cs",
+              "RelativeToolTip": "id generator maker\\loginform.aspx.cs",
+              "ViewState": "AQIAAAUAAAAAAAAAAAAAABMAAAA8AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-03T02:19:29.944Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "loginform.aspx",
+              "DocumentMoniker": "C:\\Users\\toman\\source\\repos\\id generator maker\\id generator maker\\loginform.aspx",
+              "RelativeDocumentMoniker": "id generator maker\\loginform.aspx",
+              "ToolTip": "C:\\Users\\toman\\source\\repos\\id generator maker\\id generator maker\\loginform.aspx",
+              "RelativeToolTip": "id generator maker\\loginform.aspx",
+              "LogicalView": "7651a703-06e5-11d1-8ebd-00a0c90f26ea",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000195|",
+              "WhenOpened": "2024-05-03T02:12:36.5Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
