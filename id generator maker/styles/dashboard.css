@@ -1,0 +1,30 @@
+﻿/* Custom CSS for Student Management System */
+
+/* Set max height for container to fit in one screen */
+.container {
+    max-height: calc(100vh - 20px);
+    overflow-y: auto; /* Enable vertical scrolling if needed */
+}
+
+/* Smaller font size for table headers and data */
+.table th,
+.table td {
+    font-size: 12px;
+}
+
+/* Adjust padding and margins for better spacing */
+.form-group {
+    margin-bottom: 5px;
+}
+
+/* Adjust button margin */
+.btn {
+    margin-top: 5px;
+}
+
+/* Smaller text boxes */
+.form-control {
+    font-size: 12px;
+    padding: 0.25rem 0.5rem;
+    height: calc(1.5em + 0.5rem + 2px);
+}

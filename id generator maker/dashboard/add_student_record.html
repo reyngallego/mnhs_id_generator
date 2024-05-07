@@ -1,0 +1,129 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>Student Management System</title>
+    <meta charset="utf-8" />
+    <!-- Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container mt-4">
+        <h2>Student Management System</h2>
+        <div class="row">
+            <!-- First half of the form -->
+            <div class="col-md-6">
+                <form id="studentForm">
+                    <div class="form-group">
+                        <label for="studLRN">LRN:</label>
+                        <input type="text" class="form-control form-control-sm" id="studLRN" name="studLRN" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="studFName">First Name:</label>
+                        <input type="text" class="form-control form-control-sm" id="studFName" name="studFName" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="studMName">Middle Name:</label>
+                        <input type="text" class="form-control form-control-sm" id="studMName" name="studMName">
+                    </div>
+                    <div class="form-group">
+                        <label for="studLName">Last Name:</label>
+                        <input type="text" class="form-control form-control-sm" id="studLName" name="studLName" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="studExt">Extension:</label>
+                        <input type="text" class="form-control form-control-sm" id="studExt" name="studExt">
+                    </div>
+                    <div class="form-group">
+                        <label for="studGradeSection">Grade Section:</label>
+                        <input type="text" class="form-control form-control-sm" id="studGradeSection" name="studGradeSection" required>
+                    </div>
+                </form>
+            </div>
+            <!-- Second half of the form -->
+            <div class="col-md-6">
+                <form id="studentForm">
+                    <div class="form-group">
+                        <label for="studBirthdate">Birthdate:</label>
+                        <input type="date" class="form-control form-control-sm" id="studBirthdate" name="studBirthdate" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="studSex">Sex:</label>
+                        <select class="form-control form-control-sm" id="studSex" name="studSex" required>
+                            <option value="Male">Male</option>
+                            <option value="Female">Female</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="studAddress">Address:</label>
+                        <textarea class="form-control form-control-sm" id="studAddress" name="studAddress" rows="2" required></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="parentFullName">Parent's Full Name:</label>
+                        <input type="text" class="form-control form-control-sm" id="parentFullName" name="parentFullName" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="parentContact">Parent Contact:</label>
+                        <input type="text" class="form-control form-control-sm" id="parentContact" name="parentContact" required>
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-sm">Add Student</button>
+                </form>
+            </div>
+        </div>
+
+        <!-- Table to display students -->
+        <table class="table table-sm mt-4">
+            <!-- Table headers -->
+            <thead>
+                <tr>
+                    <th>LRN</th>
+                    <th>First Name</th>
+                    <th>Middle Name</th>
+                    <th>Last Name</th>
+                    <th>Extension</th>
+                    <th>Grade Section</th>
+                    <th>Birthdate</th>
+                    <th>Sex</th>
+                    <th>Address</th>
+                    <th>Parent's Full Name</th>
+                    <th>Parent Contact</th>
+                </tr>
+            </thead>
+            <!-- Table body -->
+            <tbody id="studentTableBody">
+                <!-- Student data will be displayed here dynamically -->
+            </tbody>
+        </table>
+    </div>
+
+    <!-- Bootstrap JS dependencies (jQuery, Popper.js, Bootstrap JS) -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            // Handle form submission to add student
+            $("#studentForm").submit(function (e) {
+                e.preventDefault();
+                // Get input values
+                var studLRN = $("#studLRN").val();
+                var studFName = $("#studFName").val();
+                var studMName = $("#studMName").val();
+                var studLName = $("#studLName").val();
+                var studExt = $("#studExt").val();
+                var studGradeSection = $("#studGradeSection").val();
+                var studBirthdate = $("#studBirthdate").val();
+                var studSex = $("#studSex").val();
+                var studAddress = $("#studAddress").val();
+                var parentFullName = $("#parentFullName").val();
+                var parentContact = $("#parentContact").val();
+
+                // Add a new row to the table with the student information
+                $("#studentTableBody").append("<tr><td>" + studLRN + "</td><td>" + studFName + "</td><td>" + studMName + "</td><td>" + studLName + "</td><td>" + studExt + "</td><td>" + studGradeSection + "</td><td>" + studBirthdate + "</td><td>" + studSex + "</td><td>" + studAddress + "</td><td>" + parentFullName + "</td><td>" + parentContact + "</td></tr>");
+
+                // Clear the form after adding the student
+                $("#studentForm")[0].reset();
+            });
+        });
+    </script>
+</body>
+</html>
