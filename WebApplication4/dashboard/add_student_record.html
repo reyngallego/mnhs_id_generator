@@ -1,0 +1,163 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>Student Management System</title>
+    <meta charset="utf-8" />
+    <!-- Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container mt-4">
+        <h2>Student Management System</h2>
+        <!-- Form to add student information -->
+        <form id="studentForm">
+            <div class="form-group">
+                <label for="studLRN">LRN:</label>
+                <input type="text" class="form-control" id="studLRN" name="studLRN" required>
+            </div>
+            <div class="form-group">
+                <label for="studFName">First Name:</label>
+                <input type="text" class="form-control" id="studFName" name="studFName" required>
+            </div>
+            <div class="form-group">
+                <label for="studMName">Middle Name:</label>
+                <input type="text" class="form-control" id="studMName" name="studMName">
+            </div>
+            <div class="form-group">
+                <label for="studLName">Last Name:</label>
+                <input type="text" class="form-control" id="studLName" name="studLName" required>
+            </div>
+            <div class="form-group">
+                <label for="studExt">Extension:</label>
+                <input type="text" class="form-control" id="studExt" name="studExt">
+            </div>
+            <div class="form-group">
+                <label for="studGradeSection">Grade Section:</label>
+                <input type="text" class="form-control" id="studGradeSection" name="studGradeSection" required>
+            </div>
+            <div class="form-group">
+                <label for="studBirthdate">Birthdate:</label>
+                <input type="date" class="form-control" id="studBirthdate" name="studBirthdate" required>
+            </div>
+            <div class="form-group">
+                <label for="studSex">Sex:</label>
+                <select class="form-control" id="studSex" name="studSex" required>
+                    <option value="Male">Male</option>
+                    <option value="Female">Female</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="studAddress">Address:</label>
+                <textarea class="form-control" id="studAddress" name="studAddress" rows="3" required></textarea>
+            </div>
+            <div class="form-group">
+                <label for="parentFName">Parent First Name:</label>
+                <input type="text" class="form-control" id="parentFName" name="parentFName" required>
+            </div>
+            <div class="form-group">
+                <label for="parentMName">Parent Middle Name:</label>
+                <input type="text" class="form-control" id="parentMName" name="parentMName">
+            </div>
+            <div class="form-group">
+                <label for="parentLName">Parent Last Name:</label>
+                <input type="text" class="form-control" id="parentLName" name="parentLName" required>
+            </div>
+            <div class="form-group">
+                <label for="parentExt">Parent Extension:</label>
+                <input type="text" class="form-control" id="parentExt" name="parentExt">
+            </div>
+            <div class="form-group">
+                <label for="parentAddress">Parent Address:</label>
+                <textarea class="form-control" id="parentAddress" name="parentAddress" rows="3" required></textarea>
+            </div>
+            <div class="form-group">
+                <label for="parentContact">Parent Contact:</label>
+                <input type="text" class="form-control" id="parentContact" name="parentContact" required>
+            </div>
+            <button type="submit" class="btn btn-primary">Add Student</button>
+        </form>
+
+        <!-- Table to display students -->
+        <table class="table mt-4">
+            <thead>
+                <tr>
+                    <th>LRN</th>
+                    <th>First Name</th>
+                    <th>Middle Name</th>
+                    <th>Last Name</th>
+                    <th>Extension</th>
+                    <th>Grade Section</th>
+                    <th>Birthdate</th>
+                    <th>Sex</th>
+                    <th>Address</th>
+                    <th>Parent First Name</th>
+                    <th>Parent Middle Name</th>
+                    <th>Parent Last Name</th>
+                    <th>Parent Extension</th>
+                    <th>Parent Address</th>
+                    <th>Parent Contact</th>
+                </tr>
+            </thead>
+            <tbody id="studentTableBody">
+                <!-- Student data will be displayed here dynamically -->
+            </tbody>
+        </table>
+    </div>
+
+    <!-- Bootstrap JS dependencies (jQuery, Popper.js, Bootstrap JS) -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script>
+    
+             $(document).ready(function () {
+                 // Handle form submission to add student
+                 $("#addStudentBtn").click(function () {
+                     var formData = $("#studentForm").serialize();
+                     $.ajax({
+                         type: "POST",
+                         url: "api/students",
+                         data: formData,
+                         success: function (response) {
+                             alert(response);
+                             $('#addStudentModal').modal('hide'); // Hide the modal after adding student
+                             fetchStudentData(); // Update table after adding student
+                             $("#studentForm")[0].reset();
+                         },
+                         error: function (xhr, status, error) {
+                             alert("Error: " + error);
+                         }
+                     });
+                 });
+
+                 // Fetch student data on page load
+                 fetchStudentData();
+
+                 // Function to fetch student data
+                 function fetchStudentData() {
+                     $.get("api/students", function (data) {
+                         // Clear existing table rows
+                         $("#studentTableBody").empty();
+
+                         // Populate table with fetched data
+                         $.each(data, function (index, student) {
+                             $("#studentTableBody").append(
+                                 "<tr><td>" + student.LRN + "</td>" +
+                                 "<td>" + student.FirstName + "</td>" +
+                                 "<td>" + student.MiddleName + "</td>" +
+                                 "<td>" + student.LastName + "</td>" +
+                                 "<td>" + student.Extension + "</td>" +
+                                 "<td>" + student.GradeSection + "</td>" +
+                                 "<td>" + student.Birthdate + "</td>" +
+                                 "<td>" + student.Sex + "</td>" +
+                                 "<td>" + student.Address + "</td>" +
+                                 "<td>" + student.ParentFullName + "</td>" +
+                                 "<td>" + student.ParentContact + "</td></tr>"
+                             );
+                         });
+                     });
+                 }
+             });
+    </script>
+</body>
+</html>
