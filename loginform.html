@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title>Login</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+	<link href="styles.css" rel="stylesheet">
+</head>
+<body>
+    <form id="form1" runat="server" onsubmit="return validateForm()">
+        <div class="container">
+            <div class="row justify-content-center align-items-center" style="height:90vh;">
+                <div class="col-md-6">
+                    <div class="login-container">
+                        <h2 class="text-center mb-4">Login</h2>
+                        <asp:Label ID="lblMessage" runat="server" Visible="false" CssClass="text-danger"></asp:Label>
+                        <div class="form-group">
+                            <label for="txtUsername">Username:</label>
+                            <input type="text" id="txtUsername" runat="server" class="form-control" placeholder="Enter your username">
+                        </div>
+                        <div class="form-group">
+                            <label for="txtPassword">Password:</label>
+                            <input type="password" id="txtPassword" runat="server" class="form-control" placeholder="Enter your password">
+                        </div>
+                        <div class="form-group">
+                            <button type="submit" id="btnLogin" runat="server" class="btn btn-primary btn-block">Login</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+
+    <!-- Bootstrap JS (Optional) -->
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <!-- External JavaScript -->
+    <script src="validateForm.js" defer></script>
+</body>
+</html>
