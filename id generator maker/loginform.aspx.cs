@@ -10,9 +10,8 @@ namespace id_generator_maker
         {
             string username = txtUsername.Text.Trim();
             string password = txtPassword.Text.Trim();
-
             // Retrieve the connection string from configuration
-            string connectionString = ConfigurationManager.ConnectionStrings["StudentRecords"].ConnectionString;
+           string connectionString = ConfigurationManager.ConnectionStrings["StudentRecords"].ConnectionString;
 
             using (SqlConnection con = new SqlConnection(connectionString))
             {

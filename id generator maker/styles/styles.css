@@ -6,7 +6,7 @@
 }
 body {
     margin: 0; /* Remove default margin */
-    font-family: Arial, sans-serif;
+    font-family: Poppins, sans-serif;
     background-color: #f8f9fa;
 }
 
@@ -17,16 +17,26 @@ body {
 
 .sidebar {
     width: 250px;
-    background-color: #087600; /* Green color */
-    color: #fff;
+    background-color: #d4f9cc; /* Green color */
+    color: #000;
     padding-top: 20px;
     height: 100vh; /* Make the sidebar full height of the viewport */
-    
-    
 }
+
+#mwnhs-banner {
+    width: 220px;
+}
+
 .sidebar h2 {
     display:ruby;
     padding-bottom:20px;
+    font-size: 20pt;
+    font-weight: 900;
+    text-transform: uppercase;
+}
+
+.sidebar h6 {
+    margin-top: 10px
 }
 
     .sidebar ul.nav {
@@ -41,10 +51,11 @@ body {
         }
 
             .sidebar ul.nav li a {
-                color: #fff;
+                color: #000;
                 padding: 10px 20px;
                 display: block;
                 text-decoration: none;
+                margin-bottom: -20px;
             }
 
                 .sidebar ul.nav li a:hover {

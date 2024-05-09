@@ -15,13 +15,17 @@
     <div class="wrapper">
         <div class="sidebar">
             <ul class="nav">
-                <h2>Moonwalk National Highschool</h2>
                 <img src="gallery/mnhslogo.png" alt="Logo" class="img-fluid mt-3" style="width: 150px;">
+                <div id="mwnhs-banner"><h2>Moonwalk National High School</h2></div>
+                
+                <h6>School ID: 320203</h6>
 
-                <li><a href="#" class="active" id="addStudentRecord">Add Student Record</a></li>
-                <li><a href="#">Print Id</a></li>
-                <li><a href="#">Settings</a></li>
-                <li><a href="#">Log Out</a></li>
+                <li><a href="#">Dashboard</a></li>
+                <li><a href="#">Attendance</a></li>
+                <li><a href="#" class="active" id="addStudentRecord">Student</a></li>
+                <li><a href="#">Reports</a></li>
+                <li><a href="#" class="active" id="generateId">ID Generator</a></li>
+                <li><a href="#">Log out</a></li>
             </ul>
         </div>
         <div class="content" id="mainContent">
@@ -41,6 +45,10 @@
             $(document).on("click", "#addStudentRecord", function (e) {
                 e.preventDefault();
                 $("#mainContent").load("dashboard/add_student_record.html");
+            });
+            $(document).on("click", "#generateId", function (e) {
+                e.preventDefault();
+                $("#mainContent").load("dashboard/generate_id.html");
             });
         });
     </script>

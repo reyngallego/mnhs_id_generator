@@ -7,9 +7,11 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace id_generator_maker {
-    
-    
-    public partial class dashboard {
+namespace id_generator_maker
+{
+
+
+    public partial class dashboard
+    {
     }
 }

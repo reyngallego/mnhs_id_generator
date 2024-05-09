@@ -8,67 +8,11 @@
 </head>
 <body>
     <div class="container mt-4">
-        <h2>Student Management System</h2>
-        <div class="row">
-            <!-- First half of the form -->
-            <div class="col-md-6">
-                <form id="studentForm">
-                    <div class="form-group">
-                        <label for="studLRN">LRN:</label>
-                        <input type="text" class="form-control form-control-sm" id="studLRN" name="studLRN" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="studFName">First Name:</label>
-                        <input type="text" class="form-control form-control-sm" id="studFName" name="studFName" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="studMName">Middle Name:</label>
-                        <input type="text" class="form-control form-control-sm" id="studMName" name="studMName">
-                    </div>
-                    <div class="form-group">
-                        <label for="studLName">Last Name:</label>
-                        <input type="text" class="form-control form-control-sm" id="studLName" name="studLName" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="studExt">Extension:</label>
-                        <input type="text" class="form-control form-control-sm" id="studExt" name="studExt">
-                    </div>
-                    <div class="form-group">
-                        <label for="studGradeSection">Grade Section:</label>
-                        <input type="text" class="form-control form-control-sm" id="studGradeSection" name="studGradeSection" required>
-                    </div>
-                </form>
-            </div>
-            <!-- Second half of the form -->
-            <div class="col-md-6">
-                <form id="studentForm">
-                    <div class="form-group">
-                        <label for="studBirthdate">Birthdate:</label>
-                        <input type="date" class="form-control form-control-sm" id="studBirthdate" name="studBirthdate" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="studSex">Sex:</label>
-                        <select class="form-control form-control-sm" id="studSex" name="studSex" required>
-                            <option value="Male">Male</option>
-                            <option value="Female">Female</option>
-                        </select>
-                    </div>
-                    <div class="form-group">
-                        <label for="studAddress">Address:</label>
-                        <textarea class="form-control form-control-sm" id="studAddress" name="studAddress" rows="2" required></textarea>
-                    </div>
-                    <div class="form-group">
-                        <label for="parentFullName">Parent's Full Name:</label>
-                        <input type="text" class="form-control form-control-sm" id="parentFullName" name="parentFullName" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="parentContact">Parent Contact:</label>
-                        <input type="text" class="form-control form-control-sm" id="parentContact" name="parentContact" required>
-                    </div>
-                    <button type="submit" class="btn btn-primary btn-sm">Add Student</button>
-                </form>
-            </div>
-        </div>
+        <h2>ATTENDANCE</h2>
+        <!-- Button to trigger modal -->
+        <button type="button" class="btn btn-primary btn-sm mb-3" data-toggle="modal" data-target="#addStudentModal">
+            Add Student
+        </button>
 
         <!-- Table to display students -->
         <table class="table table-sm mt-4">
@@ -80,12 +24,15 @@
                     <th>Middle Name</th>
                     <th>Last Name</th>
                     <th>Extension</th>
-                    <th>Grade Section</th>
+                    <th>Grade</th>
+                    <th>Section</th>
                     <th>Birthdate</th>
                     <th>Sex</th>
                     <th>Address</th>
                     <th>Parent's Full Name</th>
+                    <th>Parent Address</th>
                     <th>Parent Contact</th>
+                    <th>Adviser</th>
                 </tr>
             </thead>
             <!-- Table body -->
@@ -95,35 +42,201 @@
         </table>
     </div>
 
+    <!-- Modal for adding student -->
+    <div class="modal fade" id="addStudentModal" tabindex="-1" role="dialog" aria-labelledby="addStudentModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="addStudentModalLabel">Add Student</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <!-- Form for adding student -->
+                    <form id="studentForm">
+                        <div class="form-group">
+                            <label for="studLRN">LRN:</label>
+                            <input type="text" class="form-control" id="studLRN" name="studLRN" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="studFName">First Name:</label>
+                            <input type="text" class="form-control" id="studFName" name="studFName" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="studMName">Middle Name:</label>
+                            <input type="text" class="form-control" id="studMName" name="studMName">
+                        </div>
+                        <div class="form-group">
+                            <label for="studLName">Last Name:</label>
+                            <input type="text" class="form-control" id="studLName" name="studLName" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="studExt">Extension:</label>
+                            <input type="text" class="form-control" id="studExt" name="studExt">
+                        </div>
+                        <div class="form-group">
+                            <label for="studGrade">Grade:</label>
+                            <select class="form-control" id="studGrade" name="studGrade" required>
+                                <option value="7">7</option>
+                                <option value="8">8</option>
+                                <option value="9">9</option>
+                                <option value="10">10</option>
+                                <option value="11">11</option>
+                                <option value="12">12</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="studSection">Section:</label>
+                            <select class="form-control" id="studGrade" name="studSection" required>
+                                <option value="Hailey">Hailey</option>
+                                <option value="Herschel">Herschel</option>
+                                <option value="Watson">Watson</option>
+                                <option value="Fleming">Fleming</option>
+                                <option value="Avogadro">Avogadro</option>
+                                <option value="Newton">Newton</option>
+                                <option value="Armstrong">Armstrong</option>
+                                <option value="Gallilei">Gallilei</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="studBirthdate">Birthdate:</label>
+                            <input type="date" class="form-control" id="studBirthdate" name="studBirthdate" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="studSex">Sex:</label>
+                            <select class="form-control" id="studSex" name="studSex" required>
+                                <option value="Male">Male</option>
+                                <option value="Female">Female</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="studAddress">Address:</label>
+                            <textarea class="form-control" id="studAddress" name="studAddress" rows="3" required></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label for="parentFName">Parent First Name:</label>
+                            <input type="text" class="form-control" id="parentFName" name="parentFName" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="parentMName">Parent Middle Name:</label>
+                            <input type="text" class="form-control" id="parentMName" name="parentMName">
+                        </div>
+                        <div class="form-group">
+                            <label for="parentLName">Parent Last Name:</label>
+                            <input type="text" class="form-control" id="parentLName" name="parentLName" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="parentExt">Parent Extension:</label>
+                            <input type="text" class="form-control" id="parentExt" name="parentExt">
+                        </div>
+                        <div class="form-group">
+                            <label for="parentAddress">Parent Address:</label>
+                            <textarea class="form-control" id="parentAddress" name="parentAddress" rows="3" required></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label for="parentContact">Parent Contact:</label>
+                            <input type="text" class="form-control" id="parentContact" name="parentContact" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="studFaculty">Adviser:</label>
+                            <select class="form-control" id="studFaculty" name="studFaculty" required>
+                                <option value="Pablito O. Tura">Pablito O. Tura</option>
+                                <option value="Donalyn T. Nungay">Donalyn T. Nungay</option>
+                                <option value="Sarah O. Matito">Sarah O. Matito</option>
+                                <option value="Sherwin Kenneth T. Madayag">Sherwin Kenneth T. Madayag</option>
+                            </select>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button id="addStudentBtn" type="submit" class="btn btn-primary">Add Student</button>
+
+                </div>
+            </div>
+        </div>
+    </div>
     <!-- Bootstrap JS dependencies (jQuery, Popper.js, Bootstrap JS) -->
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <script>
         $(document).ready(function () {
-            // Handle form submission to add student
-            $("#studentForm").submit(function (e) {
-                e.preventDefault();
-                // Get input values
-                var studLRN = $("#studLRN").val();
-                var studFName = $("#studFName").val();
-                var studMName = $("#studMName").val();
-                var studLName = $("#studLName").val();
-                var studExt = $("#studExt").val();
-                var studGradeSection = $("#studGradeSection").val();
-                var studBirthdate = $("#studBirthdate").val();
-                var studSex = $("#studSex").val();
-                var studAddress = $("#studAddress").val();
-                var parentFullName = $("#parentFullName").val();
-                var parentContact = $("#parentContact").val();
+            // Function to fetch and display students
+            function getStudents() {
+                $.ajax({
+                    url: 'api/students', // Assuming your API endpoint is at this URL
+                    method: 'GET',
+                    success: function (response) {
+                        // Clear existing table rows
+                        $("#studentTableBody").empty();
 
-                // Add a new row to the table with the student information
-                $("#studentTableBody").append("<tr><td>" + studLRN + "</td><td>" + studFName + "</td><td>" + studMName + "</td><td>" + studLName + "</td><td>" + studExt + "</td><td>" + studGradeSection + "</td><td>" + studBirthdate + "</td><td>" + studSex + "</td><td>" + studAddress + "</td><td>" + parentFullName + "</td><td>" + parentContact + "</td></tr>");
+                        // Loop through each student in the response and append a table row
+                        response.forEach(function (student) {
+                            $("#studentTableBody").append(
+                                "<tr><td>" + student.LRN + "</td>" +
+                                "<td>" + student.FirstName + "</td>" +
+                                "<td>" + student.MiddleName + "</td>" +
+                                "<td>" + student.LastName + "</td>" +
+                                "<td>" + student.Extension + "</td>" +
+                                "<td>" + student.Grade + "</td>" +
+                                "<td>" + student.Section + "</td>" +
+                                "<td>" + student.Birthdate + "</td>" +
+                                "<td>" + student.Sex + "</td>" +
+                                "<td>" + student.Address + "</td>" +
+                                "<td>" + student.ParentFullName + "</td>" +
+                                "<td>" + student.ParentAddress + "</td>" +
+                                "<td>" + student.ParentContact + "</td>" +
+                                "<td>" + student.Faculty + "</td></tr>"
+                            );
+                        });
+                    },
+                    error: function (xhr, status, error) {
+                        console.error(xhr.responseText);
+                    }
+                });
+            }
 
-                // Clear the form after adding the student
-                $("#studentForm")[0].reset();
+            // Call the function to fetch and display students when the document is ready
+            getStudents();
+
+            $(document).ready(function () {
+                // Handle form submission to add student
+                $("#studentForm").submit(function (event) {
+                    // Prevent the default form submission behavior
+                    event.preventDefault();
+
+                    // Serialize form data
+                    var formData = $(this).serialize();
+                    console.log("Form Data:", formData); // Log form data to console
+
+                    // Send AJAX POST request to add student
+                    $.ajax({
+                        type: "POST",
+                        url: "/api/students", // Update the URL to match the controller route
+                        data: formData,
+                        success: function (response) {
+                            console.log("Success:", response); // Log success message to console
+                            alert(response);
+                            $('#addStudentModal').modal('hide'); // Hide the modal after adding student
+                            fetchStudentData(); // Update table after adding student
+                            $("#studentForm")[0].reset();
+                        },
+                        error: function (xhr, status, error) {
+                            alert("Error: " + error); // Alert user if error occurs
+                        }
+                    });
+                });
+
+                // Bind form submission to button click
+                $("#addStudentBtn").click(function () {
+                    $("#studentForm").submit(); // Trigger form submission when button is clicked
+                });
             });
+
         });
+
     </script>
 </body>
 </html>
