@@ -2,11 +2,11 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Montserrat', sans-serif;
+    font-family: Poppins, sans-serif;
 }
 body {
     margin: 0; /* Remove default margin */
-    font-family: Poppins, sans-serif;
+    font-family: Arial, sans-serif;
     background-color: #f8f9fa;
 }
 
@@ -31,7 +31,7 @@ body {
     display:ruby;
     padding-bottom:20px;
     font-size: 20pt;
-    font-weight: 900;
+    font-weight: 700;
     text-transform: uppercase;
 }
 
