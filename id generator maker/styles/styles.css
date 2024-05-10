@@ -16,19 +16,22 @@ body {
 }
 
 .sidebar {
-    width: 250px;
+    width: 350px;
     background-color: #d4f9cc; /* Green color */
     color: #000;
     padding-top: 20px;
     height: 100vh; /* Make the sidebar full height of the viewport */
+    display: flex;
+    flex-direction: column;
+    flex-direction: column;
 }
 
 #mwnhs-banner {
-    width: 220px;
+    width: 330px;
 }
 
 .sidebar h2 {
-    display:ruby;
+    text-align: center;
     padding-bottom:20px;
     font-size: 20pt;
     font-weight: 700;
@@ -36,7 +39,7 @@ body {
 }
 
 .sidebar h6 {
-    margin-top: 10px
+    display: block;
 }
 
     .sidebar ul.nav {
@@ -49,6 +52,12 @@ body {
         .sidebar ul.nav li {
             list-style: none;
         }
+            
+            .sidebar ul.nav li img {
+                display: inline-block;
+                float: left;
+                margin-right: 15px;
+            }
 
             .sidebar ul.nav li a {
                 color: #000;
@@ -62,10 +71,14 @@ body {
                     background-color: rgba(0, 0, 0, 0.2);
                 }
 
+                
+
 .content {
     flex: 1;
     padding: 20px;
 }
+
+
 
 @media (max-width: 768px) {
     .wrapper {

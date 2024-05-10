@@ -5,13 +5,14 @@
     <meta charset="utf-8" />
     <!-- Bootstrap CSS -->
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/styles/idgenerator.css" rel="stylesheet">
 </head>
 <body>
     <div class="container mt-4">
         <h2>ID Generator</h2>
         <!-- Button to trigger modal -->
-        <button type="button" class="btn btn-primary btn-sm mb-3" data-toggle="modal" data-target="#addStudentModal">
-            Add Student
+        <button type="button" class="btn btn-primary btn-sm mb-3" data-toggle="modal" data-target="#generateIdModal">
+            Generate ID
         </button>
 
         <!-- Table to display students -->
@@ -19,18 +20,12 @@
             <!-- Table headers -->
             <thead>
                 <tr>
-                    <th>LRN</th>
-                    <th>Last Name</th>
-                    <th>First Name</th>
-                    <th>Middle Name</th>
-                    <th>Extension</th>
-                    <th>Grade Section</th>
-                    <th>Birthdate</th>
-                    <th>Sex</th>
-                    <th>Address</th>
-                    <th>Parent's Full Name</th>
-                    <th>Parent Address</th>
-                    <th>Parent Contact</th>
+                    <th id="lrn-generate-id">LRN</th>
+                    <th id="full-name-generate-id">Full Name</th>
+                    <th id="grade-generate-id">Grade</th>
+                    <th id="section-generate-id">Section</th>
+                    <th id="faculty-generate-id">Adviser</th>
+                    <th id="generate-id-column"></th>
                 </tr>
             </thead>
             <!-- Table body -->
@@ -41,82 +36,18 @@
     </div>
 
     <!-- Modal for adding student -->
-    <div class="modal fade" id="addStudentModal" tabindex="-1" role="dialog" aria-labelledby="addStudentModalLabel" aria-hidden="true">
+    <div class="modal fade" id="generateIdModal" tabindex="-1" role="dialog" aria-labelledby="generateIdModalLabel" aria-hidden="true">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="addStudentModalLabel">Add Student</h5>
+                    <h5 class="modal-title" id="addStudentModalLabel">ID Preview</h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
-                <div class="modal-body">
-                    <!-- Form for adding student -->
-                    <form id="studentForm">
-                        <div class="form-group">
-                            <label for="studLRN">LRN:</label>
-                            <input type="text" class="form-control" id="studLRN" name="studLRN" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="studFName">First Name:</label>
-                            <input type="text" class="form-control" id="studFName" name="studFName" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="studMName">Middle Name:</label>
-                            <input type="text" class="form-control" id="studMName" name="studMName">
-                        </div>
-                        <div class="form-group">
-                            <label for="studLName">Last Name:</label>
-                            <input type="text" class="form-control" id="studLName" name="studLName" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="studExt">Extension:</label>
-                            <input type="text" class="form-control" id="studExt" name="studExt">
-                        </div>
-                        <div class="form-group">
-                            <label for="studGradeSection">Grade Section:</label>
-                            <input type="text" class="form-control" id="studGradeSection" name="studGradeSection" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="studBirthdate">Birthdate:</label>
-                            <input type="date" class="form-control" id="studBirthdate" name="studBirthdate" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="studSex">Sex:</label>
-                            <select class="form-control" id="studSex" name="studSex" required>
-                                <option value="Male">Male</option>
-                                <option value="Female">Female</option>
-                            </select>
-                        </div>
-                        <div class="form-group">
-                            <label for="studAddress">Address:</label>
-                            <textarea class="form-control" id="studAddress" name="studAddress" rows="3" required></textarea>
-                        </div>
-                        <div class="form-group">
-                            <label for="parentFName">Parent First Name:</label>
-                            <input type="text" class="form-control" id="parentFName" name="parentFName" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="parentMName">Parent Middle Name:</label>
-                            <input type="text" class="form-control" id="parentMName" name="parentMName">
-                        </div>
-                        <div class="form-group">
-                            <label for="parentLName">Parent Last Name:</label>
-                            <input type="text" class="form-control" id="parentLName" name="parentLName" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="parentExt">Parent Extension:</label>
-                            <input type="text" class="form-control" id="parentExt" name="parentExt">
-                        </div>
-                        <div class="form-group">
-                            <label for="parentAddress">Parent Address:</label>
-                            <textarea class="form-control" id="parentAddress" name="parentAddress" rows="3" required></textarea>
-                        </div>
-                        <div class="form-group">
-                            <label for="parentContact">Parent Contact:</label>
-                            <input type="text" class="form-control" id="parentContact" name="parentContact" required>
-                        </div>
-                    </form>
+                <div class="id-preview-modal">
+                    <!-- Previewing the ID with student credentials -->
+                    <img class ="id-preview" src="/gallery/ID Draft Front.png" />
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
@@ -150,12 +81,7 @@
                                 "<td>" + student.MiddleName + "</td>" +
                                 "<td>" + student.Extension + "</td>" +
                                 "<td>" + student.GradeSection + "</td>" +
-                                "<td>" + student.Birthdate + "</td>" +
-                                "<td>" + student.Sex + "</td>" +
-                                "<td>" + student.Address + "</td>" +
-                                "<td>" + student.ParentFullName + "</td>" +
-                                "<td>" + student.ParentAddress + "</td>" +
-                                "<td>" + student.ParentContact + "</td></tr>"
+                                "<td>" + student.Faculty + "</td></tr > "
                             );
                         });
                     },

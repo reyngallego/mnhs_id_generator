@@ -10,6 +10,7 @@
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
     <!-- Custom CSS for Admin Dashboard -->
     <link href="styles/styles.css" rel="stylesheet">
+    <!-- <link href="styles/dashboard_1.css" rel="stylesheet"> -->
 </head>
 <body>
     <div class="wrapper">
@@ -20,13 +21,13 @@
                 
                 <h6>School ID: 320203</h6>
 
-                <li><a href="#">Dashboard</a></li>
-                <li><a href="#">Attendance</a></li>
-                <li><a href="#" class="active" id="addStudentRecord">Student</a></li>
-                <li><a href="#">Reports</a></li>
-                <li><a href="#" class="active" id="generateId">ID Generator</a></li>
-                <li><a href="#">Log out</a></li>
-            </ul>
+                <li><a href="#" class="active" id="dashboard">      <img src="gallery/dashboard.png" alt="dashboard" width="30" height="30">&nbsp;   Dashboard</a></li>
+                <li><a href="#" class="active" id="attendance">     <img src="gallery/timer.png" alt="attendance" width="30" height="30">&nbsp;      Attendance</a></li>
+                <li><a href="#" class="active" id="addStudentRecord"><img src="gallery/student.png" alt="dashboard" width="30" height="30">&nbsp;    Student</a></li>
+                <li><a href="#" class="active" id="reports">        <img src="gallery/growth.png" alt="dashboard" width="30" height="30">&nbsp;      Reports</a></li>
+                <li><a href="#" class="active" id="generateId">     <img src="gallery/qr-code.png" alt="dashboard" width="30" height="30">&nbsp;     ID Generator</a></li>
+                <li><a href="#" class="active" id="logout">         <img src="gallery/logout.png" alt="dashboard" width="30" height="30">&nbsp;      Log out</a></li>
+            </ul>   
         </div>
         <div class="content" id="mainContent">
             <h1>Welcome to the Admin Dashboard!</h1>
@@ -42,6 +43,10 @@
     <script>
         $(document).ready(function () {
             // Use delegated event handler for dynamically added elements
+            $(document).on("click", "#dashboard", function (e) {
+                e.preventDefault();
+                $("#mainContent").load("dashboard/dashboard.html");
+            });
             $(document).on("click", "#addStudentRecord", function (e) {
                 e.preventDefault();
                 $("#mainContent").load("dashboard/add_student_record.html");
