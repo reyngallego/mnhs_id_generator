@@ -32,10 +32,10 @@ body {
 
 .sidebar h2 {
     text-align: center;
-    padding-bottom:20px;
     font-size: 20pt;
     font-weight: 700;
     text-transform: uppercase;
+    margin-bottom: -10px;
 }
 
 .sidebar h6 {
@@ -51,12 +51,15 @@ body {
 
         .sidebar ul.nav li {
             list-style: none;
+            font-size: 16pt;
         }
             
             .sidebar ul.nav li img {
                 display: inline-block;
                 float: left;
-                margin-right: 15px;
+                margin-right: 5px;
+                height: auto;
+                width: 30px;
             }
 
             .sidebar ul.nav li a {
